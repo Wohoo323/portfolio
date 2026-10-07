@@ -1931,3 +1931,151 @@ body {
         transform: none;
     }
 }
+
+/* CONTACT */
+.portfolio-contact {
+    padding: 32px;
+    color: var(--text-body);
+}
+.portfolio-contact-inner {
+    max-width: 1440px; margin: 0 auto; padding: 24px 0;
+    border-top: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap;
+}
+.portfolio-contact h2 {
+    margin: 0; color: var(--text-muted);
+    font-size: 14px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
+}
+.portfolio-contact-details { display: flex; flex-wrap: wrap; gap: 20px 40px; }
+.portfolio-contact-details a {
+    display: inline-flex; align-items: center; gap: 12px; max-width: 100%;
+    color: var(--text-body); text-decoration: none; font-size: 16px;
+    transition: color .2s ease;
+}
+.portfolio-contact-details a span { overflow-wrap: anywhere; min-width: 0; }
+.portfolio-contact-details svg { width: 20px; height: 20px; flex-shrink: 0; color: var(--accent); }
+.portfolio-contact-details a:hover { color: var(--accent); }
+.portfolio-contact-details a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+@media (max-width: 781px) {
+    .portfolio-contact { padding: 12px 20px 24px; }
+    .portfolio-contact-inner { align-items: flex-start; flex-direction: column; gap: 18px; }
+    .portfolio-contact-details { flex-direction: column; gap: 16px; max-width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .portfolio-contact-details a { transition: none; }
+}
+/* Yhteystiedot footerin sisällä */
+.site-footer-bar .portfolio-contact {
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+}
+.site-footer-bar .portfolio-contact-inner {
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+.site-footer-bar .portfolio-contact h2 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+.site-footer-bar .portfolio-contact-details {
+    gap: 12px 24px;
+}
+.site-footer-bar .portfolio-contact-details a {
+    color: var(--text-muted);
+    font-size: .9rem;
+    gap: 8px;
+}
+.site-footer-bar .portfolio-contact-details a:hover {
+    color: var(--accent);
+}
+.site-footer-bar .portfolio-contact-details svg {
+    width: 17px;
+    height: 17px;
+}
+@media (max-width: 700px) {
+    .site-footer-bar .portfolio-contact-inner,
+    .site-footer-bar .portfolio-contact-details {
+        align-items: center;
+    }
+}
+/* Yhtenäiset yhteystietokuvakkeet ja keskitetty footer-ryhmä. */
+.portfolio-contact-details { align-items: center; }
+.portfolio-contact-details .portfolio-contact-github { flex-shrink: 0; }
+.site-footer-bar .portfolio-contact-inner { justify-content: center; }
+.site-footer-bar .portfolio-contact-details { justify-content: center; }
+@media (min-width: 1100px) {
+    .site-footer-bar .footer-inner:has(.portfolio-contact) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    }
+    .site-footer-bar .footer-inner > .portfolio-contact { justify-self: center; }
+    .site-footer-bar .footer-inner > .footer-links { justify-self: end; }
+}
+@media (max-width: 1099px) {
+    .site-footer-bar .footer-inner:has(.portfolio-contact) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+/* WordPressin avattu mobiilivalikko */
+body .wp-block-navigation__responsive-container.is-menu-open {
+    background-color: var(--bg) !important;
+    color: var(--text-body) !important;
+    padding: 28px 24px;
+}
+body .is-menu-open .wp-block-navigation__responsive-container-content {
+    align-items: stretch;
+    padding-top: 72px;
+    max-width: 560px;
+    margin-inline: auto;
+}
+body .is-menu-open .wp-block-navigation__container {
+    align-items: stretch;
+    width: 100%;
+    gap: 0;
+}
+body .is-menu-open .wp-block-navigation-item {
+    width: 100%;
+}
+body .is-menu-open .wp-block-navigation-item__content {
+    display: block;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--text-body);
+    font-size: 20px;
+    line-height: 1.4;
+}
+body .is-menu-open .wp-block-navigation-item__content:hover,
+body .is-menu-open .current-menu-item > .wp-block-navigation-item__content {
+    color: var(--accent);
+}
+body .wp-block-navigation__responsive-container-open,
+body .wp-block-navigation__responsive-container-close {
+    color: var(--text-body);
+}
+body .wp-block-navigation__responsive-container-close {
+    padding: 10px;
+}
+body .wp-block-navigation__responsive-container-open:hover,
+body .wp-block-navigation__responsive-container-close:hover {
+    color: var(--accent);
+}
+body .wp-block-navigation a:focus-visible,
+body .wp-block-navigation button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+body .is-menu-open .wp-block-navigation__submenu-container {
+    background-color: var(--bg) !important;
+    color: var(--text-body) !important;
+}
