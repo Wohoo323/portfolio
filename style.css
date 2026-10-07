@@ -1,0 +1,1933 @@
+/*
+
+Theme Name: Tuomas Portfolio
+
+Description: Child theme for my personal portfolio website.
+
+Author: Tuomas Juustovaara
+
+Template: twentytwentyfive
+
+Version: 1.1
+
+*/
+
+
+
+
+
+/* ========================================
+
+   VARIABLES
+
+======================================== */
+
+
+
+:root {
+
+    --bg: #0b1118;
+
+    --card: #121c27;
+
+    --line: rgba(255, 255, 255, 0.10);
+
+    --card-border: #26364a;
+
+    --accent: #2dd4bf;
+
+    --accent-dark: #04201d;
+
+    --text-muted: #9fb0c3;
+
+    --text-body: #c7ced6;
+
+}
+
+
+
+
+
+/* ========================================
+
+   GLOBAL (fixes white gap under header)
+
+======================================== */
+
+
+
+html,
+
+body {
+
+    background-color: var(--bg);
+
+}
+
+
+
+.wp-site-blocks > * + * {
+
+    margin-block-start: 0;
+
+}
+
+
+
+
+
+/* ========================================
+
+   HEADER
+
+======================================== */
+
+
+
+.portfolio-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+
+
+    max-width: 1600px;
+
+    margin: 0 auto;
+
+    padding: 24px 40px;
+
+
+
+    background-color: var(--bg);
+
+    color: white;
+
+
+
+    border-bottom: 1px solid var(--line);
+
+}
+
+
+
+.portfolio-header .wp-block-navigation {
+
+    margin: 0 0 0 auto;
+
+}
+
+
+
+.portfolio-header .wp-block-navigation-item__content,
+
+.portfolio-header .wp-block-navigation-item_content {
+
+    color: var(--text-muted);
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+
+}
+
+
+
+.portfolio-header .wp-block-navigation-item__content:hover {
+
+    color: var(--accent);
+
+}
+
+
+
+
+
+/* ========================================
+
+   HERO SECTION
+
+======================================== */
+
+
+
+.hero-section {
+
+    background-color: var(--bg);
+
+    color: #ffffff;
+
+    padding: 80px 60px;
+
+
+
+    border-top: 1px solid var(--line);
+
+}
+
+
+
+.hero-columns > .wp-block-column:first-child {
+
+    transform: translateY(-140px);
+
+}
+
+
+
+/* Move hero image upward */
+
+.hero-columns > .wp-block-column:last-child {
+
+    transform: translateY(-30px);
+
+}
+
+
+
+.hero-columns {
+
+    max-width: 1600px;
+
+    margin: 0 auto;
+
+    gap: 80px;
+
+    align-items: center;
+
+}
+
+
+
+.hero-section h1,
+
+.hero-section h2,
+
+.hero-section h3,
+
+.hero-section p {
+
+    color: #ffffff;
+
+}
+
+
+
+/* Small label above the title */
+
+.hero-section h6,
+
+.hero-section .hero-label {
+
+    color: var(--accent);
+
+    letter-spacing: 0.08em;
+
+}
+
+
+
+/* Hero image: aligned to the right edge */
+
+.hero-section .wp-block-image {
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    margin-left: auto;
+
+    margin-right: 0;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+}
+
+
+
+.hero-section .wp-block-image img {
+
+    display: block;
+
+    width: 100% !important;
+
+    max-width: 420px !important;
+
+    height: auto !important;
+
+    border-radius: 12px;
+
+}
+
+
+
+/* Hero buttons: first filled, second outlined */
+
+.hero-section .wp-block-button__link {
+
+    padding: 12px 26px;
+
+    border-radius: 999px;
+
+    font-size: 0.95rem;
+
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+
+}
+
+
+
+.hero-section .wp-block-button:first-child .wp-block-button__link {
+
+    background-color: var(--accent);
+
+    color: var(--accent-dark);
+
+    border: 1px solid var(--accent);
+
+}
+
+
+
+.hero-section .wp-block-button:not(:first-child) .wp-block-button__link {
+
+    background-color: transparent;
+
+    color: var(--accent);
+
+    border: 1px solid var(--accent);
+
+}
+
+
+
+.hero-section .wp-block-button__link:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+
+.hero-section .wp-block-button:not(:first-child) .wp-block-button__link:hover {
+
+    background-color: rgba(45, 212, 191, 0.12);
+
+}
+
+
+
+
+
+/* ========================================
+
+   ABOUT SECTION
+
+======================================== */
+
+
+
+.about-section {
+
+    width: 100%;
+
+    max-width: 1600px !important;
+
+
+
+    margin-left: auto !important;
+
+    margin-right: auto !important;
+
+
+
+    padding-left: 0;
+
+    padding-right: 0;
+
+    padding-top: 56px;
+
+    padding-bottom: 56px;
+
+
+
+    position: relative;
+
+}
+
+
+
+.about-section > .wp-block-columns {
+
+    width: 100%;
+
+    max-width: none !important;
+
+
+
+    margin-left: 0 !important;
+
+    margin-right: 0 !important;
+
+
+
+    gap: 60px;
+
+}
+
+
+
+/* Line above and below the section */
+
+.about-section::before,
+
+.about-section::after {
+
+    content: "";
+
+    position: absolute;
+
+
+
+    left: 50%;
+
+    width: 100vw;
+
+    height: 1px;
+
+
+
+    background-color: var(--line);
+
+    transform: translateX(-50%);
+
+}
+
+
+
+.about-section::before { top: 0; }
+
+.about-section::after  { bottom: 0; }
+
+
+
+/* Vertical divider between About me and Education */
+
+.about-section > .wp-block-columns > .wp-block-column:first-child {
+
+    position: relative;
+
+}
+
+
+
+.about-section > .wp-block-columns > .wp-block-column:first-child::after {
+
+    content: "";
+
+    position: absolute;
+
+
+
+    top: 10px;
+
+    bottom: 10px;
+
+    right: -30px;
+
+
+
+    width: 1px;
+
+    background-color: var(--line);
+
+}
+
+
+
+
+
+/* ========================================
+
+   PROJECTS SECTION
+
+======================================== */
+
+
+
+.projects-section {
+
+    width: 100%;
+
+    max-width: 1600px !important;
+
+
+
+    margin-left: auto !important;
+
+    margin-right: auto !important;
+
+
+
+    padding: 56px 0;
+
+
+
+    background-color: var(--bg);
+
+    color: white;
+
+}
+
+
+
+.projects-section > * {
+
+    width: 100%;
+
+    max-width: none !important;
+
+
+
+    margin-left: 0 !important;
+
+    margin-right: 0 !important;
+
+}
+
+
+
+.project-grid {
+
+    display: flex;
+
+
+
+    width: 100%;
+
+    max-width: none !important;
+
+
+
+    gap: 24px;
+
+    margin-top: 40px;
+
+}
+
+
+
+.project-grid > .wp-block-column {
+
+    flex: 1 1 0;
+
+    min-width: 0;
+
+}
+
+
+
+
+
+/* ========================================
+
+   PROJECT CARDS (image on top, content below)
+
+======================================== */
+
+
+
+.project-card {
+
+    background-color: var(--card);
+
+    color: white;
+
+
+
+    border: 1px solid var(--card-border);
+
+    border-radius: 12px;
+
+
+
+    padding: 18px;
+
+
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+
+
+    height: 100%;
+
+    min-width: 0;
+
+
+
+    transition:
+
+        transform 0.25s ease,
+
+        box-shadow 0.25s ease,
+
+        border-color 0.25s ease;
+
+}
+
+
+
+.project-card:hover {
+
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.30);
+
+    border-color: var(--accent);
+
+}
+
+
+
+/* Image */
+
+.project-card .wp-block-image {
+
+    margin: 0 0 6px 0;
+
+    padding: 0;
+
+
+
+    aspect-ratio: 16 / 9;
+
+    width: 100%;
+
+
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+
+
+    background-color: var(--bg);
+
+    border-radius: 8px;
+
+    overflow: visible;
+
+}
+
+
+
+.project-card > .wp-block-image > img {
+
+    display: block;
+
+
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+    max-width: 100% !important;
+
+    max-height: 100% !important;
+
+    aspect-ratio: auto !important;
+
+
+
+    object-fit: contain !important;
+
+    object-position: center !important;
+
+    border-radius: 8px;
+
+}
+
+
+
+/* Title */
+
+.project-card h3 {
+
+    color: white;
+
+    font-size: 1.2rem;
+
+    line-height: 1.3;
+
+    margin: 4px 0 0 0;
+
+}
+
+
+
+/* Technologies line (paragraph right after the title) */
+
+.project-card h3 + p {
+
+    color: var(--accent);
+
+    font-size: 0.85rem;
+
+    line-height: 1.5;
+
+    margin: 0;
+
+}
+
+
+
+/* Description */
+
+.project-card p {
+
+    color: var(--text-body);
+
+    font-size: 0.92rem;
+
+    line-height: 1.55;
+
+    margin-top: 0;
+
+    margin-bottom: 0;
+
+}
+
+
+
+.project-card h3 + p {
+
+    color: var(--accent);
+
+}
+
+
+
+/* Button stays at the bottom of the card */
+
+.project-card .wp-block-buttons {
+
+    margin-top: auto;
+
+    padding-top: 12px;
+
+}
+
+
+
+.project-card .wp-block-button__link {
+
+    background-color: transparent !important;
+
+    color: var(--accent) !important;
+
+    border: 1px solid var(--accent) !important;
+
+
+
+    margin: 0;
+
+    padding: 10px 20px;
+
+
+
+    border-radius: 999px;
+
+    font-size: 0.88rem;
+
+
+
+    transition:
+
+        background-color 0.2s ease,
+
+        transform 0.2s ease;
+
+}
+
+
+
+.project-card .wp-block-button__link:hover {
+
+    background-color: rgba(45, 212, 191, 0.12);
+
+    transform: translateY(-2px);
+
+}
+
+
+
+
+
+/* ========================================
+
+   ABOUT / EDUCATION / TECHNOLOGIES
+
+======================================== */
+
+
+
+.hero-section .open-to {
+
+    color: var(--accent);
+
+    font-size: 0.95em;
+
+    margin-top: 18px;
+
+}
+
+
+
+.hero-section .open-to::before {
+
+    content: "\2713";
+
+    margin-right: 8px;
+
+}
+
+
+
+.edu-card {
+
+    background-color: var(--card);
+
+    border: 1px solid var(--card-border);
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+}
+
+
+
+.edu-card p {
+
+    margin: 0;
+
+}
+
+
+
+.edu-degree {
+
+    color: #ffffff;
+
+    font-size: 1em;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+
+}
+
+
+
+.hero-section .edu-school {
+
+    color: var(--text-muted);
+
+    font-size: 0.9em;
+
+    margin-top: 6px !important;
+
+}
+
+
+
+.hero-section .edu-pill {
+
+    display: inline-block;
+
+    margin-top: 16px !important;
+
+    padding: 4px 14px;
+
+    border: 1px solid #134e4a;
+
+    border-radius: 999px;
+
+    background-color: #0f1f26;
+
+    color: var(--accent);
+
+    font-size: 0.85em;
+
+}
+
+
+
+.skills-block {
+
+    margin-top: 32px;
+
+}
+
+
+
+.tech-card {
+
+    background-color: var(--card);
+
+    border: 1px solid var(--card-border);
+
+    border-radius: 12px;
+
+    padding: 6px 22px;
+
+    margin-top: 20px;
+
+}
+
+
+
+.tech-row {
+
+    display: grid;
+
+    grid-template-columns: 200px 1fr;
+
+    gap: 14px;
+
+    align-items: start;
+
+
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid var(--line);
+
+}
+
+
+
+.tech-row:last-child {
+
+    border-bottom: none;
+
+}
+
+
+
+.tech-row > * {
+
+    margin: 0 !important;
+
+}
+
+
+
+.hero-section .tech-label {
+
+    color: var(--accent);
+
+    font-size: 0.85em;
+
+    padding-top: 5px;
+
+}
+
+
+
+ul.tech-list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+
+
+    list-style: none !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+}
+
+
+
+ul.tech-list li {
+
+    margin: 0;
+
+    padding: 4px 14px;
+
+
+
+    border: 1px solid #1f2a37;
+
+    border-radius: 999px;
+
+
+
+    font-size: 0.85em;
+
+    line-height: 1.5;
+
+    color: var(--text-body);
+
+}
+
+
+
+ul.tech-list li.is-main {
+
+    border-color: #134e4a;
+
+    background-color: #0f1f26;
+
+    color: var(--accent);
+
+}
+
+
+
+@media (max-width: 700px) {
+
+    .tech-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+
+    }
+
+
+
+    .hero-section .tech-label {
+
+        padding-top: 0;
+
+    }
+
+}
+
+
+
+
+
+/* ========================================
+
+   TITLE ICONS
+
+======================================== */
+
+
+
+.title-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+
+
+    flex-shrink: 0;
+
+
+
+    background-color: #0f1f26;
+
+    border: 1px solid #134e4a;
+
+    border-radius: 10px;
+
+}
+
+
+
+.title-icon svg {
+
+    width: 22px;
+
+    height: 22px;
+
+
+
+    fill: none;
+
+    stroke: var(--accent);
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+
+}
+
+
+
+
+
+/* ========================================
+
+   TABLET
+
+======================================== */
+
+
+
+@media (max-width: 1000px) {
+
+
+
+    .project-grid {
+
+        flex-direction: column;
+
+    }
+
+
+
+    /* Don't use desktop hero positioning on smaller screens */
+
+    .hero-columns > .wp-block-column:first-child {
+
+        transform: none;
+
+    }
+
+
+
+    .hero-columns > .wp-block-column:last-child {
+
+        transform: none;
+
+    }
+
+
+
+}
+
+
+
+
+
+/* ========================================
+
+   MOBILE
+
+======================================== */
+
+
+
+@media (max-width: 700px) {
+
+
+
+    .hero-section {
+
+        padding: 60px 24px;
+
+    }
+
+
+
+    /* Hero text and image back to normal position on mobile */
+
+    .hero-columns > .wp-block-column:first-child,
+
+    .hero-columns > .wp-block-column:last-child {
+
+        transform: none;
+
+    }
+
+
+
+    .hero-section .wp-block-image {
+
+        justify-content: center;
+
+    }
+
+
+
+    .portfolio-header {
+
+        padding-left: 24px;
+
+        padding-right: 24px;
+
+    }
+
+
+
+    .about-section {
+
+        padding-left: 24px;
+
+        padding-right: 24px;
+
+    }
+
+
+
+    .projects-section {
+
+        padding: 56px 24px;
+
+    }
+
+
+
+    .about-section > .wp-block-columns {
+
+        flex-direction: column;
+
+    }
+
+
+
+    .about-section > .wp-block-columns > .wp-block-column:first-child::after {
+
+        display: none;
+
+    }
+
+
+
+}
+
+
+
+
+
+/* ========================================
+
+   TYPOGRAPHY AND POLISH
+
+======================================== */
+
+
+
+body {
+
+    letter-spacing: 0;
+
+}
+
+
+
+/* Body text: slightly smaller, regular weight, normal spacing */
+
+.hero-section {
+
+    font-size: 1.1rem;
+
+    font-weight: 400;
+
+    letter-spacing: 0;
+
+    line-height: 1.65;
+
+}
+
+
+
+/* Hero title and lead text */
+
+.hero-section h1 {
+
+    font-size: clamp(2rem, 3.2vw, 3.6rem);
+
+    font-weight: 600;
+
+    line-height: 1.1;
+
+    letter-spacing: -0.01em;
+
+}
+
+
+
+.hero-columns .hero-label {
+
+    font-size: 0.9rem;
+
+    font-weight: 500;
+
+    letter-spacing: 0.1em;
+
+}
+
+
+
+.hero-columns > .wp-block-column > p:not(.hero-label) {
+
+    font-size: 1.25rem;
+
+    line-height: 1.6;
+
+}
+
+
+
+/* Section headings: same style everywhere */
+
+.hero-section h2 {
+
+    font-size: 1.9rem;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.05em;
+
+    line-height: 1.2;
+
+}
+
+
+
+/* Cards: stronger border so they stand out from the background */
+
+.edu-card,
+
+.tech-card,
+
+.project-card {
+
+    border-color: var(--card-border);
+
+}
+
+
+
+.tech-row {
+
+    border-bottom-color: #26364a;
+
+}
+
+
+
+/* Navigation */
+
+.portfolio-header .wp-block-navigation-item__content {
+
+    font-size: 1rem;
+
+    font-weight: 500;
+
+    letter-spacing: 0.01em;
+
+}
+
+
+
+
+
+/* ========================================
+
+   HERO: keep the name on one line on desktop
+
+======================================== */
+
+
+
+@media (min-width: 782px) {
+
+
+
+    .hero-columns > .wp-block-column:first-child {
+
+        flex: 0 0 62% !important;
+
+    }
+
+
+
+    .hero-columns > .wp-block-column:last-child {
+
+        flex: 1 1 0 !important;
+
+    }
+
+
+
+    .hero-section h1 {
+
+        white-space: nowrap;
+
+    }
+
+}
+
+
+
+
+
+/* ========================================
+
+   HERO: vertical centering and line length
+
+======================================== */
+
+
+
+.hero-columns {
+
+    align-items: center !important;
+
+}
+
+
+
+.hero-columns > .wp-block-column:first-child p:not(.hero-label) {
+
+    max-width: 38rem;
+
+}
+
+
+
+.hero-columns > .wp-block-column:first-child .wp-block-buttons {
+
+    margin-top: 28px;
+
+}
+
+
+
+
+
+/* ========================================
+
+   FOOTER
+
+======================================== */
+
+
+
+.site-footer-bar {
+
+    background-color: var(--bg);
+
+    border-top: 1px solid var(--line);
+
+    padding: 22px 60px;
+
+}
+
+
+
+.site-footer-bar .footer-inner {
+
+    max-width: 1600px;
+
+    margin: 0 auto;
+
+
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 16px;
+
+}
+
+
+
+.site-footer-bar p {
+
+    margin: 0;
+
+    font-size: 0.9rem;
+
+    color: var(--text-muted);
+
+}
+
+
+
+.site-footer-bar .footer-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+
+.site-footer-bar .footer-top a {
+
+    color: var(--accent);
+
+    text-decoration: none;
+
+}
+
+
+
+.site-footer-bar .footer-top a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+
+.footer-icons {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+
+
+.footer-icon {
+
+    width: 38px;
+
+    height: 38px;
+
+
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+
+
+    border: 1px solid var(--card-border);
+
+    border-radius: 50%;
+
+
+
+    color: var(--text-body);
+
+    transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+
+}
+
+
+
+.footer-icon svg {
+
+    width: 20px;
+
+    height: 20px;
+
+
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+
+}
+
+
+
+.footer-icon:hover {
+
+    border-color: var(--accent);
+
+    color: var(--accent);
+
+    transform: translateY(-2px);
+
+}
+
+
+
+@media (max-width: 700px) {
+
+    .site-footer-bar {
+
+        padding: 22px 24px;
+
+    }
+
+
+
+    .site-footer-bar .footer-inner {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+}
+
+
+
+
+
+/* ========================================
+
+   FIX HORIZONTAL SCROLLBAR
+
+======================================== */
+
+
+
+html,
+
+body {
+
+    overflow-x: clip;
+
+}
+
+
+
+.footer-icons {
+
+    transform: translateY(-8px);
+
+}
+
+
+
+/* ========================================
+
+   HERO ENTRANCE ANIMATION
+
+======================================== */
+
+
+
+/* Hero text slides softly upward */
+
+.hero-columns > .wp-block-column:first-child {
+
+    animation: heroTextIn 1.5s ease-out 0.2s both;
+
+}
+
+
+
+/* Profile image slides softly from the right */
+
+.hero-image {
+
+    animation: heroImageIn 1.7s ease-out 0.4s both;
+
+}
+
+
+
+/* Hero text animation */
+
+@keyframes heroTextIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(45px);
+
+    }
+
+
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+
+/* Profile image animation */
+
+@keyframes heroImageIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateX(60px);
+
+    }
+
+
+
+    to {
+
+        opacity: 1;
+
+        transform: translateX(0);
+
+    }
+
+}
+
+
+
+/* Accessibility: disable animations if user prefers reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-columns > .wp-block-column:first-child,
+
+    .hero-image {
+
+        animation: none;
+
+    }
+
+}
+
+/* ========================================
+   ABOUT ME / EDUCATION / TECHNOLOGIES
+   SCROLL ANIMATIONS
+======================================== */
+
+/* ========================================
+   ABOUT ME TITLE
+======================================== */
+
+.about-section .about-card:first-child > .wp-block-group:first-child {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 1.3s ease,
+        transform 1.3s ease;
+}
+
+.about-section .about-card:first-child.about-started > .wp-block-group:first-child {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   ABOUT ME TEXT
+======================================== */
+
+.about-section .about-card:first-child > p:not(.open-to) {
+    visibility: hidden;
+}
+
+.about-section .about-card:first-child > p.typing-paragraph {
+    visibility: visible;
+    min-height: 1.5em;
+}
+
+
+/* ========================================
+   OPEN TO INTERNSHIPS
+======================================== */
+
+.about-section .about-card:first-child .open-to {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.about-section .about-card:first-child .open-to.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   EDUCATION TITLE
+======================================== */
+
+.about-section .about-card:nth-child(2) > .wp-block-group:first-child {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(40px);
+    transition:
+        opacity 1.3s ease,
+        transform 1.3s ease;
+}
+
+.about-section .about-card:nth-child(2) > .wp-block-group:first-child.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   EDUCATION CARD
+======================================== */
+
+.about-section .edu-card {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(45px);
+    transition:
+        opacity 1.3s ease,
+        transform 1.3s ease;
+}
+
+.about-section .edu-card.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   TECHNOLOGIES
+======================================== */
+
+.about-section .skills-block {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(50px);
+    transition:
+        opacity 1.4s ease,
+        transform 1.4s ease;
+}
+
+.about-section .skills-block.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   PROJECT CARDS
+======================================== */
+
+.project-card.project-reveal {
+    opacity: 0;
+    transform: translateY(45px);
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+/* Card becomes visible */
+.project-card.project-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* First card */
+.project-grid > .wp-block-column:nth-child(1) .project-card {
+    transition-delay: 0.1s;
+}
+
+
+/* Second card */
+.project-grid > .wp-block-column:nth-child(2) .project-card {
+    transition-delay: 0.35s;
+}
+
+
+/* Third card */
+.project-grid > .wp-block-column:nth-child(3) .project-card {
+    transition-delay: 0.6s;
+}
+
+
+/* Hover after card has appeared */
+.project-card.project-reveal.is-visible:hover {
+    transform: translateY(-4px);
+}
+
+.project-card.project-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card.project-reveal:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.project-card.project-reveal:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+.project-card.project-reveal:nth-child(3) {
+    transition-delay: 0.5s;
+}
+
+.project-card.project-reveal.is-visible:hover {
+    transform: translateY(-4px);
+}
+
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .about-section .about-card:first-child > .wp-block-group:first-child,
+    .about-section .about-card:nth-child(2) > .wp-block-group:first-child,
+    .about-section .edu-card,
+    .about-section .skills-block,
+    .project-card.project-reveal {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        transition: none;
+    }
+
+    .about-section .about-card:first-child > p:not(.open-to) {
+        visibility: visible;
+    }
+
+    .about-section .about-card:first-child .open-to {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+}
